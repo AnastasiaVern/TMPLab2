@@ -1,0 +1,51 @@
+#include "stdafx.h"
+
+/** \func int main() */
+int main()
+{
+FILE *pf;
+int a = 0;
+char c;
+int i = 0;
+char *_FileName="doxygenlab.cpp";
+
+	fopen_s(&pf, _FileName, "r"); 
+	if (pf == 0) { printf_s("error file\n"); }
+	else printf_s("file was successfully opened\n");
+
+	while (!feof(pf)) 
+	{
+		if (fgetc(pf) == '\\') 
+		{
+			if (fgetc(pf) == 'f') 
+			{
+				if (fgetc(pf) == 'u') 
+				{
+					if (fgetc(pf) == 'n')
+					{ 
+						if (fgetc(pf) == 'c')
+						{ 
+							if (fgetc(pf) == ' ') 
+							{ 
+								while ((c=fgetc(pf))!= '*')
+								{
+									printf("%c", c);
+								}
+							}
+							printf_s("\n");
+						}
+					}
+				}
+			};
+		};
+	}
+	fclose(pf);
+    return 0;
+}
+//Функция и для проверки правильности работы программы
+/**
+\func int sum(int a, int b) 
+*/
+int sum(int a, int b) {
+	return a + b;
+}
