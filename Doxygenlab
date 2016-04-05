@@ -9,7 +9,7 @@ int i = 0;
 char _FileName[100];
 
 
-if (argc != 2)
+if (argc != 1)
 {
 	printf("\n Error :) \n");
 	return 1;
